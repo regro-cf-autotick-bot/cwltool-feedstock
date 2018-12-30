@@ -10,7 +10,7 @@ source:
   sha256: 453e252525005b4c22dc654c0379227d516bf9364cce46184b580684cb50ad40
 
 build:
-  number: 0
+  number: 1000
   entry_points:
     - cwltool=cwltool.main:run
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
