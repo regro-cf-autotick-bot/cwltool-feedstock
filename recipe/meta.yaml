@@ -29,7 +29,7 @@ requirements:
     - python
     - rdflib >=4.2.2,<4.3.0
     - requests >=2.6.1
-    - ruamel.yaml >=0.12.4,<=0.15.97
+    - ruamel.yaml >=0.12.4,<=0.16
     - scandir
     - schema-salad >=4.5,<5
     - setuptools
@@ -37,7 +37,7 @@ requirements:
     - six >=1.9.0
     - typing_extensions
     - coloredlogs
-    - future
+    - future >=0.16
     - pathlib2 >=2.3.2
     - typing >=3.5.3  # [py27]
     - subprocess32  # [not win and py27]
