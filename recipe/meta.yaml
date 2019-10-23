@@ -1,5 +1,5 @@
 {% set name = "cwltool" %}
-{% set version = "1.0.20190915164430" %}
+{% set version = "1.0.20191022103248" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dcbb9f7a3077008cbeb8820e24ccced79f7b7daaa8b0ff0bb56533ccaf36dfd3
+  sha256: 91aa6331bea0d6bb75509906075250bfb5eb06d3e302aae5ef1fefde48e89368
 
 build:
   number: 0
