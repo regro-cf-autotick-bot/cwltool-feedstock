@@ -1,5 +1,5 @@
 {% set name = "cwltool" %}
-{% set version = "1.0.20191225192155" %}
+{% set version = "2.0.20200107113851" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,9 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4046afed1c39734438543f33a5c4da0e2b6704e8dcbb71b996fa7937c06fbca0
+  sha256: d0d466ad41286b51126d2e3d30038c18bce021da33f4710b34886ab0d59f6620
 
 build:
+  skip: true  # [py2k]
   number: 0
   entry_points:
     - cwltool=cwltool.main:run
@@ -31,7 +32,7 @@ requirements:
     - requests >=2.6.1
     - ruamel.yaml >=0.12.4,<=0.16
     - scandir
-    - schema-salad >=4.5,<5
+    - schema-salad >=5.0,<6
     - setuptools
     - shellescape >=3.4.1,<3.5
     - six >=1.9.0
