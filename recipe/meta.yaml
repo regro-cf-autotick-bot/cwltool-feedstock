@@ -1,12 +1,11 @@
-{% set name = "cwltool" %}
 {% set version = "2.0.20200122124526" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: cwltool
+  version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/c/cwltool/cwltool-{{ version }}.tar.gz
   sha256: 8bd363bc47be8806c35e9dad739b9972afe497532fc497b28ca08ee183524085
 
 build:
@@ -52,10 +51,11 @@ test:
 
 about:
   home: https://www.commonwl.org/
-  license: Apache Software
+  license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE.txt
   summary: Common workflow language reference implementation
+  dev_url: https://github.com/common-workflow-language/cwltool
   doc_url: https://github.com/common-workflow-language/cwltool
 
 extra:
