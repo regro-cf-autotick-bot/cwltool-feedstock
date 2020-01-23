@@ -10,8 +10,8 @@ source:
   sha256: 8bd363bc47be8806c35e9dad739b9972afe497532fc497b28ca08ee183524085
 
 build:
-  skip: True  # [py<30]
   number: 1
+  noarch: python
   entry_points:
     - cwltool=cwltool.main:run
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.5
     - setuptools
 
   run:
@@ -27,7 +27,7 @@ requirements:
     - mypy_extensions
     - prov ==1.5.1
     - psutil
-    - python
+    - python >=3.5
     - rdflib >=4.2.2,<4.3.0
     - requests >=2.6.1
     # Avoid ruamel.yaml >=0.16,<0.16.5 due to builds with broken dependency.
