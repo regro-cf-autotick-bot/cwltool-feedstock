@@ -2,16 +2,16 @@
 {% set version = "2.0.20200126090152" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: cwltool
+  version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/c/cwltool/cwltool-{{ version }}.tar.gz
   sha256: 614e8b4f3e2ca08260569d4a5f18cf20933292674af3d8c51c3c31eccffee6bd
 
 build:
-  skip: true  # [py2k]
-  number: 0
+  number: 1
+  noarch: python
   entry_points:
     - cwltool=cwltool.main:run
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.5
     - setuptools
 
   run:
@@ -27,10 +27,12 @@ requirements:
     - mypy_extensions
     - prov ==1.5.1
     - psutil
-    - python
+    - python >=3.5
     - rdflib >=4.2.2,<4.3.0
     - requests >=2.6.1
-    - ruamel.yaml >=0.12.4,<=0.16
+    # Avoid ruamel.yaml >=0.16,<0.16.5 due to builds with broken dependency.
+    # ref: https://github.com/conda-forge/ruamel.yaml-feedstock/pull/117
+    - ruamel.yaml >=0.12.4,<0.16|0.16.5.*
     - scandir
     - schema-salad >=5.0,<6
     - setuptools
@@ -38,10 +40,7 @@ requirements:
     - six >=1.9.0
     - typing_extensions
     - coloredlogs
-    - future >=0.16
     - pathlib2 >=2.3.2
-    - typing >=3.5.3  # [py27]
-    - subprocess32  # [not win and py27]
 
 
 test:
@@ -53,10 +52,11 @@ test:
 
 about:
   home: https://www.commonwl.org/
-  license: Apache Software
+  license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE.txt
   summary: Common workflow language reference implementation
+  dev_url: https://github.com/common-workflow-language/cwltool
   doc_url: https://github.com/common-workflow-language/cwltool
 
 extra:
