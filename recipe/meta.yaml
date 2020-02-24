@@ -1,5 +1,5 @@
 {% set name = "cwltool" %}
-{% set version = "2.0.20200219182542" %}
+{% set version = "2.0.20200224214940" %}
 
 package:
   name: cwltool
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/c/cwltool/cwltool-{{ version }}.tar.gz
-  sha256: 9c5dac75834ad54f5898fe4a4e2138e8be75ea54b9d94b120860a4cc117b3acb
+  sha256: 7eae22b9a44cc4cb7fc67e6a1ab3e066cddb51c03ed0632472223b88cac13800
 
 build:
   number: 0
   noarch: python
   entry_points:
     - cwltool=cwltool.main:run
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
 
 requirements:
   host:
