@@ -35,7 +35,7 @@ requirements:
     - bagit >=1.6.4
     - typing_extensions
     - coloredlogs
-    - pydot >= 1.4.1
+    - pydot >=1.4.1
     # - scandir
     # - six >=1.9.0
     # - pathlib2 >=2.3.2
