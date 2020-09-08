@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [py2k]
   entry_points:
     - cwltool=cwltool.main:run
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
@@ -18,11 +19,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
     - setuptools
 
   run:
-    - python >=3.5
+    - python
     - setuptools
     - requests >=2.6.1
     - ruamel.yaml >=0.12.4,<=0.16.5
