@@ -5,11 +5,13 @@ Home: https://www.commonwl.org/
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cwltool-feedstock/blob/master/LICENSE.txt)
 
 Summary: Common workflow language reference implementation
 
+Development: https://github.com/common-workflow-language/cwltool
 
+Documentation: https://github.com/common-workflow-language/cwltool
 
 Current build status
 ====================
