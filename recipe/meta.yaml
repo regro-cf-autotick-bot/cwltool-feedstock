@@ -38,6 +38,7 @@ requirements:
     - coloredlogs
     - pydot >=1.4.1
     - typing >=3.5.3  # [py<35]
+    - argcomplete
 
 test:
   # requires:
