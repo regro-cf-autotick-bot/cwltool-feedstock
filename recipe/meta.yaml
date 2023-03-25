@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py2k or win]
   entry_points:
     - cwltool=cwltool.main:run
@@ -30,8 +30,8 @@ requirements:
     - types-psutil
     - types-mock
     - setuptools
-    - schema-salad >=8.2.20211104054942,<9
-    - cwl-utils >=0.19
+    - schema-salad >=8.4,<9
+    - cwl-utils >=0.22
     - ruamel.yaml >=0.17.6,<0.18
       # ruamel.yaml is needed for the type hints
       # the newer version: 0.15.99 has py.typed, which mypyc needs
@@ -39,25 +39,25 @@ requirements:
     - python
     - setuptools
     - requests >=2.6.1
-    - ruamel.yaml >=0.16,<0.18
-    - rdflib >=4.2.2,<6.3.0
+    - ruamel.yaml >=0.17.6,<0.18
+    - rdflib >=4.2.2,<6.4.0
     - shellescape >=3.4.1,<3.9
-    - schema-salad >=8.2.20211104054942,<9
+    - schema-salad >=8.4,<9
     - mypy_extensions
     - psutil >=5.6.6
     - prov ==1.5.1
     - bagit >=1.6.4
     - typing_extensions
     - coloredlogs
-    - galaxy-tool-util  # [ not (aarch64 or arm64)]
+    - galaxy-tool-util >=22.1.2,<23
     - pydot >=1.4.1
     - argcomplete
     - cachecontrol
-    - cwl-utils >=0.19
+    - cwl-utils >=0.22
 
 test:
   requires:
-    - pytest >=6.2,<7.2
+    - pytest >=6.2,<7.3
     - pytest-xdist
     - pytest-httpserver
     - mock >=2.0.0
